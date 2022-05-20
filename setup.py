@@ -1,9 +1,8 @@
+import os
 import requests
 import setuptools
 
 
-with open("requirements.txt", encoding="UTF-8") as file:
-    install_requires = [i[:-1] for i in file.readlines()]
 
 version = requests.get("https://pypi.org/pypi/catly-translate/json").json()["info"]["version"]
 v0, v1, v2 = map(int, version.split("."))
@@ -19,6 +18,14 @@ version = ".".join(map(str, [v0, v1, v2]))
 
 with open("src/catly_translate/__version.py", "w+") as file:
     file.write(f'version = "{version}"')
+
+with open("requirements.txt", encoding="UTF-8") as file:
+    install_requires = [i[:-1] for i in file.readlines()]
+    
+if os.path.isdir("build"):
+    os.removedirs("build")
+if os.path.isdir("dist"):
+    os.removedirs("dist")
 
 setuptools.setup(
     name="catly_translate",
