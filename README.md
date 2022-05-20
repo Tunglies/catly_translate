@@ -2,8 +2,6 @@
 
 Simple &amp; Easy Way For BAIDU Translation
 
-
-
 Here's some example.
 
 ```python
