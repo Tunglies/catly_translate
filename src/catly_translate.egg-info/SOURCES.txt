@@ -7,4 +7,5 @@ src/catly_translate/sign.js
 src/catly_translate.egg-info/PKG-INFO
 src/catly_translate.egg-info/SOURCES.txt
 src/catly_translate.egg-info/dependency_links.txt
+src/catly_translate.egg-info/requires.txt
 src/catly_translate.egg-info/top_level.txt
