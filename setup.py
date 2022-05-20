@@ -12,9 +12,8 @@ setuptools.setup(
     package_dir={"":"src"},
     packages=setuptools.find_packages(where="src"),
     include_package_data=True,
-    package_data={"": ["*.js"]},
+    package_data={"src": ["sign.js"]},
     classifiers=[
         "Programming Language :: Python :: 3"
     ],
-    data_files=["*.js"]
 )
