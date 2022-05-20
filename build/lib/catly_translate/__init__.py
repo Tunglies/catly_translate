@@ -1,4 +1,4 @@
 from .__translate import translate
+from .__version import version
 
-
-__version__ = "0.0.2"
+__version__ = version

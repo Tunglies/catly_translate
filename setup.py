@@ -1,11 +1,12 @@
+import requests
 import setuptools
-from src.catly_translate import __version__
 
 
 with open("requirements.txt", encoding="UTF-8") as file:
     install_requires = [i[:-1] for i in file.readlines()]
 
-v0, v1, v2 = map(int, __version__.split("."))
+version = requests.get("https://pypi.org/pypi/catly-translate/json").json()["info"]["version"]
+v0, v1, v2 = map(int, version.split("."))
 if v2 < 10:
     v2 += 1
 else:
@@ -16,9 +17,12 @@ if v1 > 10:
     v1 = 0
 version = ".".join(map(str, [v0, v1, v2]))
 
+with open("src/catly_translate/__version.py", "w+") as file:
+    file.write(f'version = "{version}"')
+
 setuptools.setup(
     name="catly_translate",
-    version=__version__,
+    version=version,
     author="CatNeverCodes",
     author_email="574469831@qq.com",
     description="Simple & Easy Way For BAIDU Translation",

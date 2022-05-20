@@ -1,9 +1,9 @@
-import catly_translate
+from src import catly_translate
 print(catly_translate.translate("hello world"))
-print(catly_translate.__version__)
+# print(catly_translate.__version__)
 
 
-from catly_translate import translate
+from src.catly_translate import translate
 text = "hello world"
 print(translate(text))
 text = "hello\n world"
