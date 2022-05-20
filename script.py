@@ -1,8 +1,9 @@
 commands = [
-    "python setup.py sdist bdist_wheel",
-    "git add .",
+    'python setup.py sdist bdist_wheel',
+    'git add .',
     'git commit -m "|^w^ >"',
     'git push',
+    # 'twine upload dist/*'
 ]
 
 import os
