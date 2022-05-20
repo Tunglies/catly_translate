@@ -12,7 +12,9 @@ setuptools.setup(
     package_dir={"":"src"},
     packages=setuptools.find_packages(where="src"),
     include_package_data=True,
-    package_data={"src": ["sign.js"]},
+    package_data={
+        "": ["*.js"]
+    },
     classifiers=[
         "Programming Language :: Python :: 3"
     ],
