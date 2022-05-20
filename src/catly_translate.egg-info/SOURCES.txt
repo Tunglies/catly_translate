@@ -1,4 +1,3 @@
-MANIFEST.in
 README.md
 setup.py
 src/catly_translate/__init__.py

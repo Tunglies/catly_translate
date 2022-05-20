@@ -1,6 +1,8 @@
 import setuptools
 from src.catly_translate import __version__
 
+with open("requirements.txt") as file:
+    install_requires = [i[:-1] for i in file.readlines()]
 
 setuptools.setup(
     name="catly_translate",
@@ -17,5 +19,5 @@ setuptools.setup(
     classifiers=[
         "Programming Language :: Python :: 3"
     ],
-    install_requires=["requests"]
+    install_requires=install_requires
 )
