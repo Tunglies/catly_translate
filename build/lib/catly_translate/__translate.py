@@ -13,6 +13,8 @@ def read_js_sign():
         js_sign_read = file.read()
     return js_sign_read
 
+with open(js_sign, encoding="utf-8") as file:
+        js_sign_read = file.read()
 
 def get_sign(text):
     script = execjs.compile(read_js_sign()).call("e", text)
