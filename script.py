@@ -2,7 +2,7 @@ commands = [
     "python setup.py sdist bdist_wheel",
     "git add .",
     'git commit -m "|^w^ >"',
-    'git push'
+    'git push',
     'pip install ./dist/*.tar.gz'
 ]
 
