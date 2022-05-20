@@ -18,7 +18,7 @@ Here's some example.
 
 The default setting is from English(en) to Chinese Simplified(zh).
 
-Switchable language with change keyword 'from_lang' and 'to_lang'.
+Switchable language by change keyword 'from_lang' and 'to_lang'.
 
 ```python
 >>> catly_translate.translate("你好", "zh", "en")
