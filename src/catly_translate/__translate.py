@@ -7,12 +7,15 @@ import requests
 ROOT = os.path.abspath(os.path.dirname(__file__))
 
 js_sign = os.path.join(ROOT, "sign.js")
-with open(js_sign, encoding="utf-8") as file:
-    js_sign_read = file.read()
+
+def read_js_sign():
+    with open(js_sign, encoding="utf-8") as file:
+        js_sign_read = file.read()
+    return js_sign_read
 
 
 def get_sign(text):
-    script = execjs.compile(js_sign_read).call("e", text)
+    script = execjs.compile(read_js_sign()).call("e", text)
     return script
 
 

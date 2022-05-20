@@ -1,16 +1,16 @@
 import setuptools
-import catly_translate
+from src.catly_translate import __version__
 
 
 setuptools.setup(
     name="catly_translate",
-    version=catly_translate.__version__,
+    version=__version__,
     author="CatNeverCodes",
     author_email="574469831@qq.com",
     description="Simple & Easy Way For BAIDU Translation",
     url="https://github.com/CatNeverCodes/catly_translate",
-    package_dir={"":"catly_translate"},
-    packages=setuptools.find_packages("catly_translate"),
+    package_dir={"":"src"},
+    packages=setuptools.find_packages(where="src"),
     include_package_data=True,
     package_data={"": ["*.js"]},
     classifiers=[
