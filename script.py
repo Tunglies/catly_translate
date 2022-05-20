@@ -3,6 +3,7 @@ commands = [
     "git add .",
     'git commit -m "|^w^ >"',
     'git push'
+    'pip install ./dist/*.tar.gz'
 ]
 
 import os
