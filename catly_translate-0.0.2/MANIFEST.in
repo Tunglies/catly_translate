@@ -1,1 +1,1 @@
-include catly_translate/*.js
+include *.js
