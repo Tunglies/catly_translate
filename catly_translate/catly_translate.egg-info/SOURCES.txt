@@ -1,0 +1,6 @@
+README.md
+setup.py
+catly_translate/catly_translate.egg-info/PKG-INFO
+catly_translate/catly_translate.egg-info/SOURCES.txt
+catly_translate/catly_translate.egg-info/dependency_links.txt
+catly_translate/catly_translate.egg-info/top_level.txt
