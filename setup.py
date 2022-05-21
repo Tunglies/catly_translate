@@ -33,7 +33,7 @@ setuptools.setup(
     author="CatNeverCodes",
     author_email="574469831@qq.com",
     description="Simple & Easy Way For BAIDU Translation",
-    long_description=open("README.md", encoding="utf-8"),
+    long_description=open("README.md", encoding="utf-8").read(),
     url="https://github.com/CatNeverCodes/catly_translate",
     package_dir={"":"src"},
     packages=setuptools.find_packages(where="src"),
@@ -44,5 +44,5 @@ setuptools.setup(
         "Programming Language :: Python :: 3"
     ],
     install_requires=install_requires,
-    keywords=["translate", "translation", "baidu", "BAIDU", "百度翻译", "baidu translate"]
+    keywords=["translate", "translation", "baidu", "BAIDU", "百度翻译", "baidu translate", "python3"]
 )
