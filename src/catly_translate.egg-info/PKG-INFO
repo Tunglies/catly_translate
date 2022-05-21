@@ -1,14 +1,45 @@
 Metadata-Version: 2.1
 Name: catly-translate
-Version: 0.0.3
+Version: 0.0.4
 Summary: Simple & Easy Way For BAIDU Translation
 Home-page: https://github.com/CatNeverCodes/catly_translate
 Author: CatNeverCodes
 Author-email: 574469831@qq.com
 License: UNKNOWN
-Keywords: translate,translation,baidu,BAIDU,百度翻译,baidu translate
+Keywords: translate,translation,baidu,BAIDU,百度翻译,baidu translate,python3
 Platform: UNKNOWN
 Classifier: Programming Language :: Python :: 3
+Description-Content-Type: text/markdown
 
-<_io.TextIOWrapper name='README.md' mode='r' encoding='utf-8'>
+# catly_translate
+
+Simple &amp; Easy Way For BAIDU Translation
+
+Here's some example.
+
+```python
+>>> import catly_translate
+>>> catly_translate.translate("Hello")
+['你好']
+>>> catly_translate.translate("Hello\nWorld")
+['你好', '世界']
+>>> catly_translate.translate("Hello\r\nWorld")
+['你好', '世界']
+```
+
+The default setting is from English(en) to Chinese Simplified(zh).
+
+Switchable language by change keyword 'from_lang' and 'to_lang'.
+
+```python
+>>> catly_translate.translate("你好", "zh", "en")
+['Hello']
+>>> catly_translate.translate("你好\n世界", from_lang="zh", to_lang="en")
+['Hello', 'world']
+>>> catly_translate.translate("你好", from_lang="zh", to_lang="jp")
+['こんにちは']
+>>> catly_translate.translate("hello", from_lang="en", to_lang="jp")
+['こんにちは']
+```
+
 

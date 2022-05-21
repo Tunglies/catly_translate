@@ -1,4 +1,5 @@
 import os
+import shutil
 import requests
 import setuptools
 
@@ -22,10 +23,11 @@ with open("src/catly_translate/__version.py", "w+") as file:
 with open("requirements.txt", encoding="UTF-8") as file:
     install_requires = [i[:-1] for i in file.readlines()]
     
-if os.path.isdir("build"):
-    os.removedirs("build")
-if os.path.isdir("dist"):
-    os.removedirs("dist")
+
+if os.path.exists("build"):
+    shutil.rmtree("build")
+if os.path.exists("dist"):
+    shutil.rmtree("dist")
 
 setuptools.setup(
     name="catly_translate",
@@ -34,6 +36,7 @@ setuptools.setup(
     author_email="574469831@qq.com",
     description="Simple & Easy Way For BAIDU Translation",
     long_description=open("README.md", encoding="utf-8").read(),
+    long_description_content_type="text/markdown",
     url="https://github.com/CatNeverCodes/catly_translate",
     package_dir={"":"src"},
     packages=setuptools.find_packages(where="src"),
