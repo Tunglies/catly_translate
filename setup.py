@@ -21,14 +21,13 @@ with open("src/catly_translate/__version.py", "w+") as file:
     file.write(f'version = "{version}"')
 
 with open("requirements.txt", encoding="UTF-8") as file:
-    install_requires = [i[:-1] for i in file.readlines()]
+    install_requires = [i.rstrip("\n") for i in file.readlines()]
     
 
 if os.path.exists("build"):
     shutil.rmtree("build")
 if os.path.exists("dist"):
     shutil.rmtree("dist")
-
 setuptools.setup(
     name="catly_translate",
     version=version,
