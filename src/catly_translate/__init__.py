@@ -1,18 +1,17 @@
-from .__version import version
-__version__ = version
-
-
 import os
-import warnings
-import traceback
+import warnings as __warnings
+import traceback as __traceback
+
+from .__version import version
 
 try:
-    import execjs
-    import requests
+    import execjs as __execjs
+    import requests as __requests
 except Exception:
-    traceback.print_exc()
+    __traceback.print_exc()
 
 
+__version__ = version
 __all__ = ["translate"]
 
 
@@ -23,17 +22,18 @@ def __load_sign_js():
         
         with open(js_file, encoding="utf-8") as file:
             js_read = file.read()
-        
         setattr(__load_sign_js, "__instance", js_read)
+
     return getattr(__load_sign_js, "__instance")
 
 
 def __calculate_sign(text):
     js_file = __load_sign_js()
     try:
-        script = execjs.compile(js_file).call("e", text)
+        script = __execjs.compile(js_file).call("e", text)
     except Exception:
-        traceback.print_exc()
+        __traceback.print_exc()
+        return ""
     return script
 
 
@@ -75,22 +75,54 @@ def __post_translate(text, from_lang="en", to_lang="zh"):
             'sec-ch-ua-mobile': '?0',
             'sec-ch-ua-platform': '"Windows"'}
     try:
-        data = requests.post(url, headers=headers, data=payload).json()
+        data = __requests.post(url, headers=headers, data=payload).json()
     except Exception:
-        traceback.print_exc()
+        __traceback.print_exc()
+        return ""
     return data
 
 
 def __translate(text, from_lang="auto", to_lang="zh", limite_size=5000):
     if len(text) > limite_size:
-        warnings.warn("Baidu translation is limited to 5000 words")
+        __warnings.warn("Baidu translation is limited to 5000 words")
         return ""
+
+    if not isinstance(text, str):
+        __warnings.warn("translation text only support type of str")
+        return ""
+    
     try:
         trans_result = __post_translate(text, from_lang, to_lang)["trans_result"]["data"]
+        if "dst" not in trans_result[0].keys():
+            print(trans_result)
+            __warnings.warn("translation failed, thus no translation returned")
+            return ""
+        
     except Exception:
-        traceback.print_exc()
+        __traceback.print_exc()
+        return ""
     return __format_list_str_list((i["dst"] for i in trans_result))
 
 
-def translate(text, from_lang="auto", to_lang="zh"):
+def translate(text: str, from_lang="auto", to_lang="zh") -> str:
+    r"""
+    ### Here're some basic usages.
+    >>> import catly_translate
+    >>> catly_translate.translate("Hello")
+    ['你好']
+    >>> catly_translate.translate("こんにちは")
+    ['你好']
+    >>> catly_translate.translate("Hello\nWorld")
+    ['你好', '世界']
+    >>> catly_translate.translate("こんにちは\r\n世界")
+    ['你好', '世界']
+    
+    ### You can manualy specify keyword from_lang, to_lang or both.
+    >>> catly_translate.translate("Hello", "en", "jp")
+    ['こんにちは']
+    >>> catly_translate.translate("你好", to_lang="en")
+    ['Hello']
+    >>> catly_translate.translate("你好", to_lang="jp")
+    ['こんにちは']    
+    """
     return __translate(text=text, from_lang=from_lang, to_lang=to_lang)

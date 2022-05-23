@@ -46,5 +46,5 @@ setuptools.setup(
         "Programming Language :: Python :: 3"
     ],
     install_requires=install_requires,
-    keywords=["translate", "translation", "baidu", "BAIDU", "百度翻译", "baidu translate", "python3"]
+    keywords=["translate", "translation", "baidu", "Baidu", "BAIDU", "百度翻译", "baidu translate", "python3"]
 )

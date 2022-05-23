@@ -1,8 +1,8 @@
 # catly_translate
 
-Simple &amp; Easy Way For BAIDU Translation
+Simple &amp; Easy Way For Baidu Translation
 
-Here's some example.
+Here're some basic usages.
 
 ```python
 >>> import catly_translate
@@ -16,14 +16,22 @@ Here's some example.
 ['你好', '世界']
 ```
 
-The default setting is Auto language to Chinese Simplified(zh).
-
-Switchable language by change keyword 'from_lang' and 'to_lang'.
+The default setting is auto language to Chinese Simplified(zh).
 
 ```python
->>> catly_translate.translate("Hello", "auto", "zh")
-['你好']
->>> catly_translate.translate("你好", "zh", "en")
-['Hello']
+def translate(text: str, from_lang="auto", to_lang="zh") -> str:
+    ...
+```
 
+from_lang=auto is suitable in most case, try change when translation not as expected.
+
+You can also manualy specify keyword from_lang, to_lang or both.
+
+```python
+>>> catly_translate.translate("Hello", "en", "jp")
+['こんにちは']
+>>> catly_translate.translate("你好", to_lang="en")
+['Hello']
+>>> catly_translate.translate("你好", to_lang="jp")
+['こんにちは']
 ```
