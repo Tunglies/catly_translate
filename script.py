@@ -3,7 +3,7 @@ commands = [
     'git add .',
     'git commit -m "|^w^ >"',
     'git push',
-    'twine upload dist/*'
+    # 'twine upload dist/*'
 ]
 
 import os
