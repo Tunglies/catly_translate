@@ -35,3 +35,5 @@ You can also manualy specify keyword from_lang, to_lang or both.
 >>> catly_translate.translate("你好", to_lang="jp")
 ['こんにちは']
 ```
+
+\# Note: Max string length is 5000 per translation due to Baidu API limit. 

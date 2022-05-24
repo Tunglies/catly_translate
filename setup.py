@@ -33,7 +33,7 @@ setuptools.setup(
     version=version,
     author="CatNeverCodes",
     author_email="574469831@qq.com",
-    description="Simple & Easy Way For BAIDU Translation",
+    description="Simple & Easy Way For Baidu Translation",
     long_description=open("README.md", encoding="utf-8").read(),
     long_description_content_type="text/markdown",
     url="https://github.com/CatNeverCodes/catly_translate",

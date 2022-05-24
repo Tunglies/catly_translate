@@ -1,7 +1,7 @@
 Metadata-Version: 2.1
 Name: catly-translate
 Version: 0.0.8
-Summary: Simple & Easy Way For BAIDU Translation
+Summary: Simple & Easy Way For Baidu Translation
 Home-page: https://github.com/CatNeverCodes/catly_translate
 Author: CatNeverCodes
 Author-email: 574469831@qq.com
@@ -48,5 +48,7 @@ You can also manualy specify keyword from_lang, to_lang or both.
 >>> catly_translate.translate("你好", to_lang="jp")
 ['こんにちは']
 ```
+
+\# Note: Max string length is 5000 per translation due to Baidu API limit. 
 
 
