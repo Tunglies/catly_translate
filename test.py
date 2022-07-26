@@ -18,10 +18,13 @@ class Test(unittest.TestCase):
     
 
 if __name__ == "__main__":
-    # suite = unittest.TestSuite()
-    # loader = unittest.TestLoader()
-    # suite.addTest(loader.loadTestsFromTestCase(Test))
-    # unittest.TextTestRunner().run(suite)
+    debug = 0
+    if debug:
+        suite = unittest.TestSuite()
+        loader = unittest.TestLoader()
+        suite.addTest(loader.loadTestsFromTestCase(Test))
+        unittest.TextTestRunner().run(suite)
+
     # print(translate(["hello"]))
-    # print(catly_translate.translate("你好", to_lang="kor"))
-    print(catly_translate.translate('Hello', "en", "jp"))
+    print(catly_translate.translate("你好", to_lang="en"))
+    # print(catly_translate.translate('Hello', "en", "jp"))

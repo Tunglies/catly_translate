@@ -2,6 +2,7 @@ README.md
 setup.py
 src/catly_translate/__init__.py
 src/catly_translate/__version.py
+src/catly_translate/js_test.py
 src/catly_translate/sign.js
 src/catly_translate/utils.py
 src/catly_translate.egg-info/PKG-INFO

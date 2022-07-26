@@ -1,2 +1,3 @@
-PyExecJs
-requests
+httpx
+Js2Py
+fake_useragent
