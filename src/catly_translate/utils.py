@@ -1,7 +1,9 @@
 import os
-import js2py
-import httpx
 import warnings
+
+import httpx
+import execjs
+
 from urllib import parse
 from fake_useragent import UserAgent
 
@@ -20,9 +22,9 @@ def __load_sign_js():
 
 def __calculate_sign(text):
     js_file = __load_sign_js()
-    script = js2py.EvalJs()
-    script.execute(js_file)
-    return script.e(text)
+    context = execjs.compile(js_file)
+    result = context.call("e", text)
+    return result
 
 
 def __format_list_str_list(strings):
