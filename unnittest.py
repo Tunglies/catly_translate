@@ -20,7 +20,7 @@ class Test(unittest.TestCase):
     
 
 if __name__ == "__main__":
-    debug = 0
+    debug = 1
     if debug:
         suite = unittest.TestSuite()
         loader = unittest.TestLoader()
