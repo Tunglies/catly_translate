@@ -4,21 +4,14 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "label": "debug",
+            "type": "shell",
+            "command": "python script.py debug"
+        },
+        {
             "label": "build",
             "type": "shell",
-            "command": "python setup.py sdist bdist_wheel",
-            "problemMatcher": []
-        },
-        {
-            "label": "git update",
-            "type": "shell",
-            "command": "git add . | git commit -m \"|^w^ >\" | git push",
-            "problemMatcher": []
-        },
-        {
-            "label": "upload",
-            "type": "shell",
-            "command": "twine upload dist/*"
+            "command": "python script.py build"
         }
     ]
 }

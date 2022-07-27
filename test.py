@@ -1,32 +1,14 @@
-import unittest
 from src import catly_translate
+from src.catly_translate import utils
+
+client = catly_translate.utils.Client()
+print(client.token)
+client = catly_translate.utils.Client()
+print(client.token)
 
 
-translate = catly_translate.translate
-class Test(unittest.TestCase):
-    def test_common_case_0(self):
-        self.assertEqual(translate("hello"), ["你好"])
-        
-    def test_common_case_1(self):
-        self.assertEqual(translate("こんにちは"), ["你好"])
-    
-    def test_common_case_2(self):
-        self.assertEqual(translate("Hello\nWorld"), ['你好', '世界'])
-    
-    def test_common_case_3(self):
-        self.assertEqual(translate("こんにちは\r\n世界"), ['你好', '世界'])
-    
+# utils.load_sign_js()
 
-if __name__ == "__main__":
-    debug = 1
-    if debug:
-        suite = unittest.TestSuite()
-        loader = unittest.TestLoader()
-        suite.addTest(loader.loadTestsFromTestCase(Test))
-        unittest.TextTestRunner().run(suite)
+# import catly_translate
 
-    # print(translate("#Hello"))
-    print(translate("#hello"))
-    # print(translate(["hello"]))
-    # print(catly_translate.translate("我的门卡掉了", to_lang="en"))
-    # print(catly_translate.translate('Hello', "en", "jp"))
+print(catly_translate.translate("hello"))

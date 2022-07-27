@@ -1,3 +1,2 @@
-httpx
+requests
 PyExecJS
-fake_useragent
