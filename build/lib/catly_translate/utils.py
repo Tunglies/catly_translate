@@ -1,10 +1,9 @@
 import os
 import re
-import warnings
 
 import execjs
 import httpx
-import requests
+# import requests
 
 from urllib import parse
 
