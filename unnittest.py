@@ -1,8 +1,10 @@
 import unittest
-from src import catly_translate
+# from src import catly_translate
+from src.catly_translate import utils
 
 
-translate = catly_translate.translate
+# translate = catly_translate.translate
+translate = utils.translate
 class Test(unittest.TestCase):
     def test_common_case_0(self):
         self.assertEqual(translate("hello"), ["你好"])
@@ -27,6 +29,9 @@ if __name__ == "__main__":
 
     # print(translate("#Hello"))
     print(translate("hello"))
+    print(translate("hello"))
+    print(translate("#hello"))
+    print(translate("こんにちは"))
     # print(translate(["hello"]))
     # print(catly_translate.translate("我的门卡掉了", to_lang="en"))
     # print(catly_translate.translate('Hello', "en", "jp"))

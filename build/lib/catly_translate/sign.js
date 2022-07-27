@@ -1,3 +1,4 @@
+var i = null;
 function a(r) {
     if (Array.isArray(r)) {
         for (var o = 0, t = Array(r.length); o < r.length; o++)
@@ -47,4 +48,3 @@ function e(r) {
     p %= 1e6,
     p.toString() + "." + (p ^ m)
 }
-var i = null;

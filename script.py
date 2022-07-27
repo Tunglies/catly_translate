@@ -14,7 +14,6 @@ if arg == "debug":
         'git add .',
         'git commit -m "|^w^ >"',
         'git push',
-        'twine upload dist/*'
     ]
 elif arg == "build":
     commands = [
